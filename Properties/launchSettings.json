@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Lastly": {
+      "commandName": "Project",
+      "commandLineArgs": "--console",
+      "environmentVariables": {
+        "PLANCK_SETTINGS_HTTPS_PORT": "9313",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
