@@ -50,6 +50,8 @@ As shown above the service reports as stopped before the `Ping` singleton is dis
 The aggregated logs in seq reveal the same thing. Additionally it can be seen that a new service instance is launched before the singleton from the previous instance has been disposed.
 Note that the `hosted` service is appropriately 'cleaned up' before the service reports as stopped.
 
+The highlighted columns represent the `Process ID` writing the log entry and the system reported `Service Status`. (Please note that the service and process id on a single log entry may not be associated with the same process).
+
 ![seq logs](seq-logs.png)
 
 ## expected behavior
