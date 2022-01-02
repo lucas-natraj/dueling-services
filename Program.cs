@@ -2,9 +2,11 @@ using Lastly;
 using Serilog;
 using Microsoft.Extensions.Hosting.WindowsServices;
 
+var appDir = new FileInfo(typeof(Program).Assembly.Location).Directory.FullName;
 var logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
             .WriteTo.Console()
+            .WriteTo.File(new Serilog.Formatting.Compact.CompactJsonFormatter(), Path.Combine(appDir, "log.txt"), rollingInterval: RollingInterval.Day)
             .WriteTo.Seq("http://localhost:5341")
             .Enrich.WithProcessId()
             .Enrich.WithProcessName()
